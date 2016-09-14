@@ -99,12 +99,12 @@ The Recast.AI Response is generated after a call with the two previous methods a
 * AllEntities(names ...string) *Returns all entities matching -names-*
 
 ```go
-resp, err := client.TextRequest("Give me a recipe with asparagus. And a recipe with tomatoes.")
+response, err := client.TextRequest("Give me a recipe with asparagus. And a recipe with tomatoes.")
 if err != nil {
 // Handle error
 }
 
-intent, err := resp.Intent()
+intent, err := response.Intent()
 if err != nil {
 // No intent matches input
 }
@@ -117,7 +117,7 @@ if intent == "recipe" {
     entitiesMap = response.AllEntities()
     ingredients = response.Entities("ingredients")
 }
-fmt.Printf("This request has been filled at %s\n", resp.Timestamp())
+fmt.Printf("This request has been filled at %s\n", response.Timestamp())
 ```
 
 ### Sentence
